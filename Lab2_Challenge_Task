@@ -1,0 +1,58 @@
+# Setup
+target_name = "CORDERO" # Replace with your actual surname in UPPERCASE
+STUDENT_ID = "TUPM-25-0354"    # Replace with your actual ID
+seed_num = int(STUDENT_ID[-1]) 
+redacted_name = ""
+
+# Logic: Iterate and replace vowels
+for char in target_name:
+    if char in "AEIOU":
+        redacted_name += str(seed_num)
+    else:
+        redacted_name += char
+
+# Output for Assessment Data
+print(f"Original Surname: {target_name}")
+print(f"SEED_NUM Used: {seed_num}")
+print(f"Redacted Output: {redacted_name}")
+
+# Setup
+engineer_name = "CORDERO"
+# We need to wrap the string index in int() correctly
+seed_num = int("TUPM-25-0354"[-1]) 
+# You must use the variable 'engineer_name', not the literal name CORDERO
+total_loops = len(engineer_name)    
+
+# Logic
+first_letter_ascii = ord(engineer_name[0])
+verification_hash = (first_letter_ascii * seed_num) - total_loops
+
+# Assessment Data Output
+print("--- Task 2 Assessment ---")
+print(f"First Letter ASCII (A): {first_letter_ascii}")
+print(f"SEED_NUM (B): {seed_num}")
+print(f"Total Loops (C): {total_loops}")
+print(f"Verification Hash: {verification_hash}")  
+
+# Setup
+correct_password = "MECHANICAL" 
+attempts = 0  
+is_locked = True
+
+# Logic: Indefinite iteration
+while is_locked:
+    # prompt the user
+    user_input = input("Enter password: ").strip().upper()
+    attempts += 1 
+    
+    if user_input == correct_password:
+        print("Access Granted.")
+        is_locked = False
+    else:
+        print(f"Incorrect. (Attempt {attempts})")
+
+# Assessment Data Output
+print("\n--- Task 3 Assessment ---")
+print(f"Correct Password Set: {correct_password}")
+print(f"Input Attempts: {attempts}")
+print(f"Attempts Before Success: {attempts - 1}")
